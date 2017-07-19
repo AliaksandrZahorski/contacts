@@ -1,0 +1,25 @@
+{
+  "name": "contacts",
+  "version": "1.0.0",
+  "description": "contacts",
+  "main": "script.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AliaksandrZahorski/contacts.git"
+  },
+  "keywords": [
+    "key"
+  ],
+  "author": "alex",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/AliaksandrZahorski/contacts/issues"
+  },
+  "homepage": "https://github.com/AliaksandrZahorski/contacts#readme",
+  "devDependencies": {
+    "webpack": "^3.3.0"
+  }
+}
