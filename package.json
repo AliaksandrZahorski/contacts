@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/AliaksandrZahorski/contacts#readme",
   "devDependencies": {
+    "eslint": "^4.2.0",
+    "eslint-plugin-react": "^7.1.0",
     "webpack": "^3.3.0"
   }
 }
