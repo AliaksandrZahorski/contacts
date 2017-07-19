@@ -4,7 +4,7 @@
   "description": "contacts",
   "main": "script.js",
   "scripts": {
-    "test": "test"
+    "test": "node build"
   },
   "repository": {
     "type": "git",
