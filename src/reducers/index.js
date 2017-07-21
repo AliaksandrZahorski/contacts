@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
 import users from './users'
 
-const todoApp = combineReducers({
+const contactApplication = combineReducers({
   users
 })
 
-export default todoApp
+export default contactApplication
