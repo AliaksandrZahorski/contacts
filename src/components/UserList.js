@@ -1,10 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import User from './User'
 
 const UserList = ({ users }) => (
   <ul>
-    {users.map(user =>
+    {users.data.map(user =>
       <User
         key={user.id}
         {...user}
@@ -13,11 +12,6 @@ const UserList = ({ users }) => (
   </ul>
 )
 
-UserList.propTypes = {
-  users: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    text: PropTypes.string.isRequired
-  }).isRequired).isRequired
-}
+
 
 export default UserList

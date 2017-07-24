@@ -1,40 +1,29 @@
-const users = ( state = {}, action ) => {
-  switch(action.type){
-    case 'ADD': {
+const users = (state = {data: [{id: 1, text: "text"}], system: {text: ''}}, action) => {
+  switch (action.type) {
+    case 'ADD_USER':
+    console.log('From addUser');
       return {
-        byId: [ ...state.byId, action.id],
-        byHash: {
-          ...state.byHash,
-          [action.id]: action.payload
-        }
+        ...state,
+        data: [...state.data, {
+          id: action.id,
+          text: action.text
+        }]
       }
-    }
+      case 'FILTER_USER':
+      console.log('From filterUser: ');
+        return state;
 
-    case 'UPDATE': {
-      state.byHash[action.id] = {
-        ...state.byHash[action.id],
-        ...action.payload
-      }
-      return {
-        ...state
-      }
-    }
+      case 'CHANGE_TEXT':
+        console.log('From changeText: ');
+            return {
+              ...state,
+              system: {
+                 text: action.input,
+              }
+            };
 
-    case 'REMOVE': {
-      const prunedIds = state.byId.filter(item => {
-        return item !== action.id // return all the items not matching the action.id
-      })
-      delete state.byHash[action.id] // delete the hash associated with the action.id
-
-      return {
-        byId: prunedIds,
-        byHash: state.byHash
-      }
-    }
-
-    default: {
+    default:
       return state
-    }
   }
 }
 

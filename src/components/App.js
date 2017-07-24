@@ -1,17 +1,14 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React from 'react'
+import AddUser from '../containers/AddUser'
+import FilterUser from '../containers/FilterUser'
+import VisibleUserList from '../containers/VisibleUserList'
 
-class App extends Component {
-  render() {
-    const result = JSON.stringify(this.props.user)
-    return <div> { result } </div>
-  }
-}
+const App = () => (
+  <div>
+    <AddUser />
+    <VisibleUserList />
+    <FilterUser />
+  </div>
+)
 
-function mapStateToProps (state) {
-  return {
-    user: state.users.byHash
-  }
-}
-
-export default connect(mapStateToProps)(App)
+export default App

@@ -1,22 +1,15 @@
-export const addAction = ( id, title ) => {
-    return {
-      type: 'ADD',
-      id: '' + id,
-      payload: { id: id, content: {title: title }}
-    }
-}
+let nextTodoId = 10
+export const addUser = (text) => ({
+  type: 'ADD_USER',
+  id: nextTodoId++,
+  text,
+})
 
-export const updateAction = ( id, title ) => {
-    return {
-      type: 'UPDATE',
-      id: '' + id,
-      payload: { id: id, content: {title: title }}
-    }
-}
+export const filterUser = () => ({
+  type: 'FILTER_USER',
+})
 
-export const removeAction = ( id ) => {
-    return {
-      type: 'REMOVE',
-      id: '' + id
-    }
-}
+export const textChange = event => ({
+  type: 'CHANGE_TEXT',
+  input: event.target.value,
+});

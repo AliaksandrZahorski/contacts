@@ -7,21 +7,21 @@ let AddUser = ({ dispatch }) => {
 
   return (
     <div>
-      <form onSubmit={e => {
-        e.preventDefault()
-        if (!input.value.trim()) {
-          return
-        }
-        dispatch(addUser(input.value))
-        input.value = ''
-      }}>
-        <input ref={node => {
-          input = node
-        }} />
-        <button type="submit">
-          Add User
-        </button>
-      </form>
+    <form onSubmit={e => {
+      e.preventDefault()
+      if (!input.value.trim()) {
+        return
+      }
+      dispatch(addUser(input.value))
+      input.value = ''
+    }}>
+      <input ref={node => {
+        input = node
+      }} />
+      <button type="submit">
+        Add User
+      </button>
+    </form>
     </div>
   )
 }
