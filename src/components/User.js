@@ -1,14 +1,13 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { currentUser } from '../actions'
 
-const User = ({ text }) => (
-  <li>
+let User = ({ text, id, dispatch }) => (
+  <li onClick={() => dispatch( currentUser( id ))}>
     {text}
   </li>
 )
 
-User.propTypes = {
-  text: PropTypes.string.isRequired
-}
+User = connect()(User)
 
 export default User

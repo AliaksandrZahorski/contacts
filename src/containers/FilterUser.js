@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { filterUser, textChange } from '../actions'
 
 let FilterUser = ({ dispatch }) => {
-  let input
 
   return (
     <div>

@@ -21,6 +21,15 @@ const users = (state = {data: [{id: 1, text: "text"}], system: {text: ''}}, acti
                  text: action.input,
               }
             };
+      case 'SELECT_USER':
+        console.log('From currentUser: ' + action.currentUserId);
+            return {
+              ...state,
+              system: {
+                 ...state.system,
+                 currentUserId: action.currentUserId,
+              }
+            };
 
     default:
       return state

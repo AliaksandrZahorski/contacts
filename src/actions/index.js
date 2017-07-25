@@ -12,4 +12,9 @@ export const filterUser = () => ({
 export const textChange = event => ({
   type: 'CHANGE_TEXT',
   input: event.target.value,
-});
+})
+
+export const currentUser = id => ({
+  type: 'SELECT_USER',
+  currentUserId: id,
+})
