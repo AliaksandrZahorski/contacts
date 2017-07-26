@@ -1,4 +1,5 @@
 let nextTodoId = 10
+
 export const addUser = (text) => ({
   type: 'ADD_USER',
   id: nextTodoId++,
@@ -16,5 +17,10 @@ export const textChange = event => ({
 
 export const currentUser = id => ({
   type: 'SELECT_USER',
+  currentUserId: id,
+})
+
+export const deleteUser = id => ({
+  type: 'DELETE_USER',
   currentUserId: id,
 })

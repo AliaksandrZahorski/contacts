@@ -1,4 +1,6 @@
-const users = (state = {data: [{id: 1, text: "text"}], system: {text: ''}}, action) => {
+import initialState from '../const/InitialState'
+
+const users = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_USER':
     console.log('From addUser');
@@ -30,6 +32,18 @@ const users = (state = {data: [{id: 1, text: "text"}], system: {text: ''}}, acti
                  currentUserId: action.currentUserId,
               }
             };
+      case 'DELETE_USER':
+      console.log('From deleteUser: ' + state.data);
+      console.log( state.data.filter(({ id }) => id !== action.currentUserId) );
+        return {
+          data: [
+            ...state.data.filter(({ id }) => id !== action.currentUserId)
+          ],
+          system: {
+             ...state.system,
+             currentUserId: 0,
+           }
+        }
 
     default:
       return state

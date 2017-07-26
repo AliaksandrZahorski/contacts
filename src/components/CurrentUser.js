@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import UserList from '../components/UserList'
+import FullData from '../components/FullData'
 
 const mapStateToProps = ( users ) => {
   let result = users.users.data.filter((item) => item.id === users.users.system.currentUserId);
@@ -16,6 +16,6 @@ const mapDispatchToProps = {
 const CurrentUser = connect(
   mapStateToProps,
   mapDispatchToProps
-)(UserList)
+)(FullData)
 
 export default CurrentUser

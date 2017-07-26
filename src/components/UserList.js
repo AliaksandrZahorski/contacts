@@ -2,6 +2,7 @@ import React from 'react'
 import User from './User'
 
 const UserList = ({ users }) => (
+  <div className="userlist">
   <ul>
     {users.data.map(user =>
       <User
@@ -10,6 +11,7 @@ const UserList = ({ users }) => (
       />
     )}
   </ul>
+  </div>
 )
 
 

@@ -7,8 +7,8 @@ import CurrentUser from './CurrentUser'
 const App = () => (
   <div>
     <AddUser />
-    <VisibleUserList />
     <FilterUser />
+    <VisibleUserList />
     <CurrentUser />
   </div>
 )
