@@ -8,12 +8,14 @@ const users = (state = initialState, action) => {
         ...state,
         data: [...state.data, {
           id: action.id,
-          text: action.text
-        }]
+          text: action.text,
+          additionalText: action.data,
+        }],
+        system: {
+           ...state.system,
+           isEdit: false,
+        }
       }
-      case 'FILTER_USER':
-      console.log('From filterUser: ');
-        return state;
 
       case 'CHANGE_TEXT':
         console.log('From changeText: ');
@@ -21,6 +23,7 @@ const users = (state = initialState, action) => {
               ...state,
               system: {
                  text: action.input,
+                 isEdit: false,
               }
             };
       case 'SELECT_USER':
@@ -30,6 +33,7 @@ const users = (state = initialState, action) => {
               system: {
                  ...state.system,
                  currentUserId: action.currentUserId,
+                 isEdit: false,
               }
             };
       case 'DELETE_USER':
@@ -42,8 +46,38 @@ const users = (state = initialState, action) => {
           system: {
              ...state.system,
              currentUserId: 0,
+             isEdit: false,
            }
         }
+      case 'EDIT_USER':
+        console.log('From editUser: ');
+        return {
+          ...state,
+          system: {
+             ...state.system,
+             isEdit: true,
+          }
+        };
+
+        case 'SAVE_USER':
+        let index = state.data.findIndex( element => element.id === action.id);
+        console.log('From saveUser' + index);
+        // bad practice, mutable
+          state.data[ index  ] = {
+            ...state.data[ index  ],
+            ...{
+                  id: action.id,
+                  text: action.text,
+                  additionalText: action.data,
+               },
+          }
+          return {
+            ...state,
+            system: {
+               ...state.system,
+               isEdit: false,
+            }
+          }
 
     default:
       return state
