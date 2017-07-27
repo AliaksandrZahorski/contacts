@@ -4,9 +4,9 @@ import { deleteUser, editUser } from '../actions'
 
 let FullUser = ({id, text, additionalText, dispatch }) => (
   <div>
-    <p>Name: {text}</p>
-    <p>Data: {additionalText}</p>
-      <button onClick={() => dispatch(deleteUser( id ))}>
+    <p className="currentUser name">Name: {text}</p>
+    <p className="currentUser data">Data: {additionalText}</p>
+      <button className="delete" onClick={() => dispatch(deleteUser( id ))}>
         deleteUser
       </button>
       <button onClick={() => dispatch(editUser( id ))}>

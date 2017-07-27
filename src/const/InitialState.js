@@ -7,7 +7,7 @@ const initialState = {
   ],
   system: {
     text: '',
-    currentUserId: 0,
+    currentUserId: -1,
     isEdit: 0,
   }
 }
