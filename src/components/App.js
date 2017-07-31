@@ -3,6 +3,7 @@ import AddUser from '../containers/AddUser'
 import FilterUser from '../containers/FilterUser'
 import VisibleUserList from '../containers/VisibleUserList'
 import CurrentUser from './CurrentUser'
+import EditCurrentUser from './EditCurrentUser'
 
 const App = () => (
   <div>
@@ -10,6 +11,7 @@ const App = () => (
     <FilterUser />
     <VisibleUserList />
     <CurrentUser />
+    <EditCurrentUser />
   </div>
 )
 

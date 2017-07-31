@@ -3,21 +3,25 @@ import { connect } from 'react-redux'
 import { addUser } from '../actions'
 
 let AddUser = ({ dispatch }) => {
-  let input
+  let inputName, inputData
 
   return (
     <div>
     <form onSubmit={e => {
       e.preventDefault()
-      if (!input.value.trim()) {
+      if (!inputName.value.trim()) {
         return
       }
-      dispatch(addUser(input.value))
-      input.value = ''
+      dispatch(addUser(inputName.value, inputData.value))
+      inputName.value = '';
+      inputData.value = '';
     }}>
       <input ref={node => {
-        input = node
-      }} />
+        inputName = node
+      }}  placeholder="Name"/>
+      <input ref={node => {
+        inputData = node
+      }}  placeholder="Data" />
       <button type="submit">
         Add User
       </button>

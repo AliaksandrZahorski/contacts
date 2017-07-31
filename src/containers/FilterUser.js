@@ -1,15 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { filterUser, textChange } from '../actions'
+import { textChange } from '../actions'
 
 let FilterUser = ({ dispatch }) => {
 
   return (
     <div>
-    <input type="text" name="userText" onChange={(event) => { dispatch(textChange( event )) }} />
-    <button onClick={() => dispatch(filterUser())}>
-      filterUser
-    </button>
+    <input
+      type="text"
+      name="userText"
+      placeholder="Search..."
+      onChange={(event) => { dispatch(textChange( event )) }}
+     />
     </div>
   )
 }

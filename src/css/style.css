@@ -9,12 +9,43 @@ input, button {
     margin-left: 20px;
 }
 
+button,
+button:active,
+button:focus {
+    outline: none;
+}
+
+button {
+  border-radius: 8px;
+  border: none;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+
+button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+button.delete:hover {
+    background-color: #f44336;
+    color: black;
+}
+
+
 li {
+  margin-bottom: 10px;
   list-style-type: none;
+  cursor:pointer;
+}
+
+li:hover {
+  font-weight: bold;
 }
 
 .userlist {
   width: 300px;
+  min-height: 300px;
   display: inline-block;
   background-color: aliceblue;
   vertical-align:top;
@@ -23,10 +54,17 @@ li {
 .userdata {
   width: 300px;
   display: inline-block;
-  background-color: beige;
   vertical-align:top;
 }
 
 .userdata p {
   margin-left: 20px;
+}
+
+.currentUser.name {
+  margin-bottom: 40px;
+}
+
+.currentUser.data {
+  margin-bottom: 24px;
 }
